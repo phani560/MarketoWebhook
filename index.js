@@ -1,7 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const axios = require('axios');
-const fs = require('fs');
 const jsforce = require('jsforce');
 const jwt = require('jsonwebtoken');
 const moment = require('moment');
@@ -23,7 +22,7 @@ app.post('/', (req, res) => {
     console.log(req.body);
     const data=req.body;
     if(JSON.stringify(data) != '{}'){
-        var privatekey = fs.readFileSync('./key.pem');
+        var privatekey = process.env.PRIVATEKEY;
     
     var jwtparams = {
         iss: process.env.CONSUMERKEY,
