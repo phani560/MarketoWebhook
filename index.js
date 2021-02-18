@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 app.post('/', (req, res) => {
    
-    console.log(req.body);
+    //console.log(req.body);
     const data=req.body;
     if(JSON.stringify(data) != '{}'){
         if(typeof req.cookies['jwttoken'] === "undefined" && typeof req.cookies['instanceurl'] === "undefined")
